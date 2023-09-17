@@ -13,8 +13,12 @@ def twenty_twenty_two(a):
     """
     return a // 7
 
-
-new_res = twenty_twenty_two(71)
-print(new_res)
-
+def abs_value(a):
+    """Return absolute value of a"""
+    if a > 0:
+        return a
+    elif a < 0:
+        return -a
+    else:
+        return a
 
