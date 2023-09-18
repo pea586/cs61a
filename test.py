@@ -59,9 +59,6 @@ from math import pi, sqrt
 def make_adder(n):
     """
     Return a function that takes another parameter k and return k+n
-    >>> add_three = make_adder(3)
-    >>>make_adder(4)
-    7
     """
 
     def adder(k):
@@ -79,4 +76,4 @@ def so_slow(num):
         x = x + 1
     return x / 0
 
-square(so_slow(5))
+# square(so_slow(5))
