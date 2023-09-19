@@ -1,79 +1,62 @@
 """
-Generalization
+Environments for Higher-order Func
 """
-from math import pi, sqrt
 
 
-# def area_constant(r, shape_cons):
-#     assert r > 0, 'r MUST be a positive'
-#     return r * r * shape_cons
-#
-#
-# def area_square(r):
-#     return area_constant(r, 1)
-#
-#
-# def area_circle(r):
-#     return area_constant(r, pi)
-#
-#
-# def area_hexagon(r):
-#     return area_constant(r, 3 * sqrt(3) / 2)
-#
-# def identity(k):
-#     return k
-#
-#
-# def cube(k):
-#     return pow(k, 3)
-#
-#
-# def summaration(n, term):
-#     """ Sum the first n terms of numbers"""
-#     total, k = 0, 1
-#     while k <= n:
-#         total, k = total + term(k), k + 1
-#     return total
-#
-#
-# def sum_natural(n):
-#     """
-#     sum the first n numbers
-#     """
-#     return summaration(n, identity)
-#
-#
-# def sum_cube(n):
-#     """
-#     sum of the first n cube numbers
-#
-#     """
-#     return summaration(n, cube)
-#
-#
-# aa = summaration(5, cube)
-# print(aa)
-# print(1 + 1)
+def apply_twice(f, x):
+    return f(f(x))
 
 
-def make_adder(n):
-    """
-    Return a function that takes another parameter k and return k+n
-    """
+# def square(x):
+#     return x ** 2
 
-    def adder(k):
-        return k + n
 
-    return adder
+def add(a, b, c):
+    return a + b + c
 
-def square(x):
-    print("here!")
-    return x * x
 
-def so_slow(num):
-    x = num
-    while x > 0:
-        x = x + 1
-    return x / 0
+def currying_add(func):
+    def wrapper(a, c, b=666):
+        return func(a, b, c)
 
-# square(so_slow(5))
+    return wrapper
+
+
+# result = currying_add(add)(1, 2)
+# print(result)
+
+from operator import add, mul
+
+square = lambda x: x * x
+
+identity = lambda x: x
+
+triple = lambda x: 3 * x
+
+increment = lambda x: x + 1
+
+
+def product(n, term):
+    start = 1
+    ans = 1
+    while start <= n:
+        ans *= term(start)
+        start += 1
+    return ans
+
+
+def accumulate(merger, start, n, term):
+    step = 1
+    while step <= n:
+        curr = merger(start, term(step))
+        start = curr
+        step += 1
+    return start
+
+
+def product_using_accumulate(n, term):
+    return product(n, term)
+
+
+ans = product_using_accumulate(6, triple)
+print(ans)
