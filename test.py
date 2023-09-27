@@ -92,4 +92,4 @@ def mario(c, e, g, low_g):
     return song
 
 
-play(both(mario_at(1), mario_at(1 / 2)))
+play(both(mario_at(2), mario_at(1 / 2)))
