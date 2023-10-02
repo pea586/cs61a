@@ -7,40 +7,21 @@ f,g,h -> functions
 import collections
 
 
-def trace1(fn):
-    def traced(x):
-        print('Calling', fn, 'on argument', x)
-        return fn(x)
-
-    return traced
+def split(num):
+    return num // 10, num % 10
 
 
-@trace1
-def square(x):
-    return x * x
+def merge(m, n):
+    s = ''
+    if m == 0 or n == 0:
+        return str(m+n) + s
+    else:
+        m1,n1 = m%10,n%10
+        if m1 < n1:
+            return merge(m//10,n) + str(m1) + s
+        else:
+            return merge(m,n//10) + str(n1) + s
 
 
-@trace1
-def triple(x):
-    return x * 3
 
-
-# print(triple(5))
-
-def increment(x):
-    return x + 1
-
-
-def double(x):
-    return double(x + x)
-
-
-first = double
-
-
-def double(y):
-    return y + y
-
-
-result = first(10)
-print(result)  # 40
+print(merge(31, 42))
