@@ -6,22 +6,18 @@ f,g,h -> functions
 """
 import collections
 
-
-def split(num):
-    return num // 10, num % 10
-
-
-def merge(m, n):
-    s = ''
-    if m == 0 or n == 0:
-        return str(m+n) + s
-    else:
-        m1,n1 = m%10,n%10
-        if m1 < n1:
-            return merge(m//10,n) + str(m1) + s
-        else:
-            return merge(m,n//10) + str(n1) + s
+# def test(colors: str):
+#     if len(colors) < 3:
+#         return False
+#     a, b = 'AAA', 'BBB'
+#     cnt1, cnt2 = 0, 0
+#     for i in range(len(colors) - 2):
+#         cur = colors[i:i+3]
+#         if cur == a:
+#             cnt1 += 1
+#         elif cur == b:
+#             cnt2 += 1
+#     return cnt1 > cnt2
 
 
-
-print(merge(31, 42))
+print(1 * (1 == 81))
