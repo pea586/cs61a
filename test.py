@@ -6,6 +6,7 @@ f,g,h -> functions
 """
 import collections
 
+
 # def test(colors: str):
 #     if len(colors) < 3:
 #         return False
@@ -19,5 +20,26 @@ import collections
 #             cnt2 += 1
 #     return cnt1 > cnt2
 
+def num_eights(pos):
+    if pos == 0:
+        return 0
+    return 1 * (pos % 10 == 8) + num_eights(pos // 10)
 
-print(1 * (1 == 81))
+
+class LinkedList:
+    def __init__(self, val=None, next=None):
+        self.val = val
+        self.next = next
+
+
+a = LinkedList(1,b)
+b = LinkedList(2,c)
+c = LinkedList()
+d = LinkedList()
+e = LinkedList()
+f = LinkedList()
+g = LinkedList()
+h = LinkedList()
+i = LinkedList()
+j = LinkedList()
+k = LinkedList()
