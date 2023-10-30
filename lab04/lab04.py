@@ -38,6 +38,11 @@ def pascal(row, column):
     6
     """
     "*** YOUR CODE HERE ***"
+    if column > row:
+        return 0
+    elif column == 0 or column == row:
+        return 1
+    return pascal(row - 1, column - 1) + pascal(row - 1, column)
 
 
 def paths(m, n):
