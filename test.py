@@ -32,8 +32,8 @@ class LinkedList:
         self.next = next
 
 
-a = LinkedList(1,b)
-b = LinkedList(2,c)
+# a = LinkedList(1, b)
+# b = LinkedList(2, c)
 c = LinkedList()
 d = LinkedList()
 e = LinkedList()
@@ -43,3 +43,5 @@ h = LinkedList()
 i = LinkedList()
 j = LinkedList()
 k = LinkedList()
+
+
