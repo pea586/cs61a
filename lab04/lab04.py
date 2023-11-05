@@ -119,7 +119,8 @@ def coords(fn, seq, lower, upper):
     [[-2, 4], [1, 1], [3, 9]]
     """
     "*** YOUR CODE HERE ***"
-    return ______
+    return [[a, fn(a)] for a in seq if lower <= fn(a) <= upper]
+
 
 
 def riffle(deck):
@@ -132,4 +133,4 @@ def riffle(deck):
     [0, 10, 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 17, 8, 18, 9, 19]
     """
     "*** YOUR CODE HERE ***"
-    return _______
+    return [temp[i] for temp in zip(deck[:len(deck)//2],deck[len(deck)//2:]) for i in range(2)]
